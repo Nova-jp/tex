@@ -1,5 +1,7 @@
 \documentclass[12pt,a4paper]{jsarticle}
+\everymath{\displaystyle}
 \begin{document}
+\section{必須５パターン}
 数列の基本形
 \begin{enumerate}
     \item （等差型）$a_1=2, a_{n+1}=a_n +3$
@@ -7,10 +9,19 @@
     \item （階差型）$a_1=2, a_{n+1}=a_n -2n+5$
     \item （階比型）$a_1=2, a_{n+1}=a_n +3^n$
 \end{enumerate}
-以下は文字を置いて解くタイプ
+文字を置いて解くタイプ（等比型に帰着タイプ）
 \begin{enumerate}
     \item $a_1=1, a_{n+1}=2 a_n -3$
     \item $a_1=2, a_{n+1}=2 a_n -3n+4$
     \item $a_1=2, a_{n+1}=3a_n+n^2 -2n +5$
+\end{enumerate}
+\section{応用}
+共通テストなどでよくある問題です。普通は誘導がつきます。
+\subsection{}
+$a_1=1,a_{n+1}=3a_{n}+2\cdot 3^n$の一般項を求めたい。
+\begin{enumerate}
+    \item $b_n=\frac{a_n}{3^n}$とおき、$b_n$を求める。
+    \item $a_n$はいくらか。
+    \item 誘導なしで解く（等比型に帰着できる）。
 \end{enumerate}
 \end{document}
