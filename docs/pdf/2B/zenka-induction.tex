@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{jsarticle}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[dvipdfmx]{graphicx}
+\everymath{\displaystyle}
+\begin{document}
+漸化式と数学的帰納法の復習問題\\
+(1)\\
+\begin{equation*}
+    \left\{
+      \begin{aligned}
+      &a_1 &=&1  \\
+      &a_{n+1} &=&a_n+n+1
+      \end{aligned}
+    \right.
+\end{equation*}
+このとき$a_n$はいくらか。\\
+(2)\\
+上の式で奇数番目のときだけ足す、即ち
+\begin{equation*}
+    \left\{
+    \begin{split}
+        &a_1=1\\
+        &a_{n+1}=
+        \left\{
+        \begin{aligned}
+            &a_n+n+1 &(nは偶数)\\
+            &a_n &(nは奇数)
+        \end{aligned}
+        \right.
+    \end{split}
+    \right.
+\end{equation*}
+このとき$a_{2n}$はいくらか。\\
+(3)\\
+$\sum_{k=1}^{n}k^2=\frac{1}{6}n(n+1)(2n+1)$を証明してください。（ヒント：帰納法）
+
+\end{document}
