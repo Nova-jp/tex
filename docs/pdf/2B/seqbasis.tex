@@ -1,33 +1,62 @@
 \documentclass[12pt,a4paper]{jsarticle}
 \everymath{\displaystyle}
 \begin{document}
-\section{ど基礎}
+\begin{abstract}
+    $\star$が付いている5つの型は完璧に理解しましょう。
+    ここに無いが知っておくべき漸化式の型はあと3つ程ありますが、
+    兎に角この5つを完璧にしましょう。
+\end{abstract}
+\section{漸化式で必須の5つの形}
 \begin{enumerate}
-    \item （等差数列）$1,3,5,7\cdots$の一般項$a_n$と第$n$項までの和$S_n$を求める。
-    \item （等比数列）$2,6,18,54\cdots$の一般項$a_n$と第$n$項までの和$S_n$を求める。
-    \item $3+6+12+24+\cdots +6144$はいくらか。
+    \item $\star$（等差型）$a_1=2, a_{n+1}=a_n +3$
+    \item $\star$（等比型）$a_1=2, a_{n+1}=3 a_n$
+    \item $\star$（階差型）$a_1=2, a_{n+1}=a_n -2n+5$
+    \item $\star$（階比型）$a_1=2, a_{n+1}=a_n +3^n$
 \end{enumerate}
-\section{必須５パターン}
-数列の基本形
+文字を置いて解く形（等比型に帰着）
 \begin{enumerate}
-    \item （等差型）$a_1=2, a_{n+1}=a_n +3$
-    \item （等比型）$a_1=2, a_{n+1}=3 a_n$
-    \item （階差型）$a_1=2, a_{n+1}=a_n -2n+5$
-    \item （階比型）$a_1=2, a_{n+1}=a_n +3^n$
-\end{enumerate}
-文字を置いて解くタイプ（等比型に帰着タイプ）
-\begin{enumerate}
-    \item $a_1=1, a_{n+1}=2 a_n -3$
+    \item $\star \quad a_1=1, a_{n+1}=2 a_n -3$
     \item $a_1=1, a_{n+1}=2 a_n -3n+4$
     \item $a_1=2, a_{n+1}=3a_n+n^2 -2n +5$
 \end{enumerate}
 \section{応用}
-共通テストなどでよくある問題です。
-\subsection{}
+共通テストなどでよくある問題です。誘導にのれるようにしましょう。
+
 $a_1=1,a_{n+1}=2a_{n}+2\cdot 4^n$の一般項を求めたい。
 \begin{enumerate}
     \item $b_n=\frac{a_n}{2^n}$とおき、$b_n$を求める。
     \item $a_n$はいくらか。
     \item （発展）誘導なしで解く（等比型に帰着できる）。
+\end{enumerate}
+\newpage
+\section{解説}
+合っていると思いますが、計算間違いしていたら教えてください。
+覚えるのではなく、理解してください。
+初学者にいちから教えられるくらい理解してください（数学は全てそう）。
+\subsection{漸化式で必須の5つの形}
+\begin{enumerate}
+    \item  等差数列の一般項です。答え：$a_n= 3n-1$
+    \item 等比数列の一般項です。答え：$a_n=2\cdot 3^{n-1} $
+    \item 等差数列の和の公式$\left(\frac{1}{2}(初項+末項)\cdot 項数\right)$を使いましょう。
+    答え：$a_n=-n^2+6n-3$
+    \item 等比数列の和の公式$\left(\frac{初項-末項\cdot 公比}{1-公比}\right)$を使いましょう。
+    答え：$a_n=\frac{1}{2}(3^n+1)$
+\end{enumerate}
+\subsection{文字を置いて解く形}
+\begin{enumerate}
+    \item $a_{n+1}-\alpha = \beta (a_n -\alpha)$となる$\alpha,\beta$を見つければ等比型に帰着されます。
+    答え：$a_n = 3-2^n$
+    \item $a_{n+1}-\alpha (n+1) -\beta= \gamma (a_n -\alpha n -\beta)$となる
+    $\alpha,\beta,\gamma$を見つければ等比型に帰着されます。
+    答え：$a_n = 3n-2^{n-1}-1$
+    \item 上ふたつと同じです。答え：$a_n= \frac{1}{2}(-n^2+n+3^{n+1}-5)$
+\end{enumerate}
+\subsection{応用}
+\begin{enumerate}
+    \item 答え：$b_{n+1}=b_n+2^n$なので$b_n=2^n-\frac{3}{2}$(この解法は覚えるべきです。共通テストでは
+    誘導がつくことが多いですが、二次試験ではつかないと思います。)
+    \item 答え：$a_n= 4^n -3\cdot 2^{n-1}$
+    \item $a_{n+1}-\alpha 4^{n+1}=\beta(a_n-\alpha 4^n)$となる$\alpha,\beta$が求まれば等比型に帰着
+    されます。この形は経験から見つけるしかないです。
 \end{enumerate}
 \end{document}
