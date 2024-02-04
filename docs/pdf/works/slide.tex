@@ -1,0 +1,290 @@
+\documentclass[dvipdfmx,notheorems]{beamer}
+
+
+\usepackage{bxdpx-beamer}
+\usepackage{pxjahyper}
+\usepackage{minijs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}   
+\usepackage[all]{xy}
+\renewcommand{\proofname}{\textbf{証明}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand\rank{\operatorname{rank}}
+\newcommand\Ker{\operatorname{Ker}}
+\newcommand\im{\operatorname{Im}}
+\newcommand\Coker{\operatorname{Coker}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Spec{\operatorname{Spec}}
+\newcommand\id{\operatorname{id}}
+%%
+
+%%
+\theoremstyle{definition}
+
+\newtheorem{definition}{定義}
+%\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}[definition]{定理}
+\newtheorem{prop}[definition]{命題}
+\newtheorem{lem}[definition]{補題}
+\newtheorem{cor}[definition]{系}
+\newtheorem{rem}[definition]{注意}
+\newtheorem{exm}[definition]{例}
+\newtheorem{stg}[definition]{設定}
+
+
+
+\title{楕円曲線上、階数2の接続のモジュライ空間について}
+\author{西原寛人}
+\date{2024年2月4日}
+
+
+
+
+\usetheme{Luebeck}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}{概要}
+    本修士論文はFassarella-Loray-MunizのOn the moduli of logarithmic connections on elliptic curvesの
+    主張である以下の定理についてまとめた。
+    \begin{thm}
+        $\mathfrak{Con}^\nu$は極を偶数$n$個持つ楕円曲線上階数$2$の
+        対数的接続のモジュライ空間とする。
+        更に下部放物ベクトル束が$\mu$半安定となるものを${\rm Con}^\nu_{I,\epsilon}$とする。
+        \begin{itemize}
+            \item ${\rm Con}^\nu_{I,\epsilon} \simeq S^n$となる。
+            \item $\mathfrak{Con}^\nu$は、
+            有限個の$S^n$の複製の貼り合わせで得られる。
+        \end{itemize}
+    \end{thm}
+\end{frame}
+
+
+\begin{frame}{設定}
+    \begin{stg}
+        \begin{itemize}
+            \item $C$は楕円曲線とする。
+            \item $D=t_1+ \cdots + t_n$を$C$の因子とする。
+            \item $\omega_\infty \in C$は固定する。
+            \item $E$は$C$上階数$2$のベクトル束で$\det E \simeq \mathscr{O}_C(\omega_\infty)$
+            を満たすとする。
+        \end{itemize}
+    \end{stg}
+    以下この場合を考える。
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        楕円曲線$C$上の階数$2$のベクトル束$E_1$を、短完全列
+        $$0\rightarrow \mathscr{O}_C \rightarrow E_1 \rightarrow \mathscr{O}_C (\omega_\infty)\rightarrow 0$$
+        が分裂しないようなものと定める。これは同型を除き一意に定まる。
+    \end{definition}
+    \begin{prop}
+        $C$上階数$2$のベクトル束$E$で$\det E = \mathscr{O}_C(\omega_\infty)$を満たすものは以下のいずれかになる。
+        \begin{itemize}
+            \item $E\simeq E_1$
+            \item $E\simeq L\oplus L^{-1}(\omega_\infty)$(ただし$L$は$\deg L = 1$を満たす直線束)
+        \end{itemize}
+    \end{prop}
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        $\mu \in (0,1)^n$とする。モジュライ空間を
+        $$
+        {\rm Bun}_{\omega_\infty}^\mu := \left\{(E,\mathbf{p}) \middle|
+            \begin{array}{l}
+                \rank E= 2 \text{かつ}\\
+                (E,\mathbf{p}) \text{は}\mu \text{半安定な放物ベクトル束}
+            \end{array}
+        \right\}$$
+        と定める。これが射影代数多様体として存在することはMehta-Seshadriより従う。
+    \end{definition}
+    \begin{prop}
+        $\mu \in \mathfrak{C}:=\left\{\mu \in (0,1)^n \middle| \sum_{k=1}^{n}\mu_k<1\right\}$なら
+        ${\rm Bun}^\mu_{\omega_\infty}=\left\{(E,\mathbf{p}) \middle| E\simeq E_1\right\}$となる。
+        特に${\rm Bun}^\mu_{\omega_\infty}\simeq \left(\mathbb{P}^1\right)^n$となる。
+    \end{prop}
+
+\end{frame}
+
+%\begin{frame}
+%    以下で定義する対数的接続を考える。
+%    \begin{definition}
+%        以下$C$を楕円曲線、$D=t_1+\cdots +t_n$を$C$上の因子とする。
+%        $E$を階数$2$の$C$上ベクトル束で$\det E = \mathscr{O}_C(\omega_\infty)$を満たすものとする。
+%        線形写像
+%        $$\nabla:E\rightarrow E\otimes \Omega_C^1(D)$$
+%        で$f\in \mathscr{O}_C$と$s\in E$に対して、ライプニッツ則
+%        $$\nabla(fs)=s\otimes df+f\nabla(s)$$
+%        を満たす$(E,\nabla)$の組を対数的接続と言う。
+%    \end{definition}
+%\end{frame}
+
+\begin{frame}{接続のモジュライ空間}
+    $\nu = (\nu_1^+, \nu_1^-,\ldots , \nu_n^+,\nu_n^-) \in \mathbb{C}^{2n}$は以下ふたつを満たすとする。
+    \begin{itemize}
+        \item 全ての$a_k\in \{+,-\}$に対して$\nu_1^{a_1}+\cdots + \nu_n^{a_n}\notin \mathbb{Z}$
+        \item 全ての$k\in \{1,\ldots ,n\}$に対して$\nu_k^+-\nu_k^-\notin \{0,1,-1\}$
+    \end{itemize}
+    $\zeta:\mathscr{O}_C(\omega_\infty)\rightarrow \mathscr{O}_C(\omega_\infty)\otimes \Omega_C^1(D)\text{:対数的接続}$
+    で
+    ${\rm Res}_{t_k}(\zeta)=\nu_k^+ +\nu_k^-$
+    を満たすものを固定する。
+    \begin{definition}
+        $\mathfrak{Con}^\nu:= \left\{(E,\nabla) \middle|
+        \begin{array}{l}
+            \nabla \text{の固有値は}\nu \text{であり、} \\
+            \det E =\mathscr{O}_C(\omega_\infty),{\rm tr}(\nabla)=\zeta
+        \end{array}\right\}/\sim$
+        $\mathfrak{Con}^\nu_{st}:= \left\{(E,\nabla) \in \mathfrak{Con}^\nu \middle|
+        \begin{array}{l}
+            {}^\exists \epsilon \in \{+,-\}^n,{}^\exists I\subset \{1,\ldots , n\}\\
+            \mu \in \{\mu \in (0,1)^n | \sum_{k=1}^{n} \mu_k <1 \} \\
+            s.t.\quad (E,\mathbf{p}^\epsilon(\nabla)) \in {\rm Bun}^{\phi_I(\mu)}_{\omega_\infty}
+        \end{array}\right\}$
+        ${\rm Con}^\nu:=\left\{(E,\nabla)\in \mathfrak{Con}^\nu \middle| E\simeq E_1\right\} \subset \mathfrak{Con}^\nu_{st}$
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{定理 [1] Fassarella-Loray-Muniz}
+        $\Delta \subset \mathbb{P}^1 \times \mathbb{P}^1$を対角成分として、
+        $S:=(\mathbb{P}^1 \times \mathbb{P}^1)\setminus \Delta$とすると
+        \begin{equation*}
+            \begin{array}{rccc}
+                {\rm Par}:&{\rm Con}^\nu & \rightarrow & S^n\\
+                &(E_1,\nabla) & \mapsto & (p_1^+(\nabla),p_1^-(\nabla);\cdots ; p_n^+(\nabla),p_n^-(\nabla))
+            \end{array}
+        \end{equation*}\
+        が定まり、これは同型になる。
+    \end{block}
+    \begin{proof}
+        \begin{itemize}
+            \item $([z_j,w_j],[u_j,v_j])_{1\leq j \leq n}\in S^n$に対して$A_j:=\left(
+            \begin{array}{cc}
+                z_j & u_j\\w_j&v_j
+            \end{array}\right)
+            \left(
+            \begin{array}{cc}
+                \nu_j^+ & 0\\0& \nu_j^-
+            \end{array}\right)
+            \left(
+            \begin{array}{cc}
+                z_j & u_j\\w_j&v_j
+            \end{array}\right)^{-1}
+            $と定める。
+            \item $A_j$から局所的な接続$\nabla_j : E_1|_{U_j}\rightarrow E_1|_{U_j}\otimes \Omega^1_C(D)$を構成する。
+            \item $\left\{
+            \begin{array}{l}
+                [(\nabla_i-\nabla_j)]\in {\rm H}^1(\mathcal{E}nd(E_1)\otimes \Omega_C^1)=\mathbb{C} \\
+                {\rm tr}(\nabla_i - \nabla_j)=0
+            \end{array}\right.$
+            \\より$\nabla_j$たちは貼り合う。
+        \end{itemize}
+    \end{proof}
+\end{frame}
+
+\begin{frame}{初等変換}
+    $I\subset \{1,\ldots ,n\}$として、$\phi_I : (0,1)^n \rightarrow (0,1)^n$を
+    $\phi_I(\mu_i):=\left\{ \begin{array}{ll}
+        1-\mu_i &(i\in I)\\
+        \mu_i &(i\notin I)
+    \end{array}
+    \right.$
+    と定める。
+    \begin{prop}
+        $\mu \in \mathfrak{C}=\{\mu | \sum_{k=1}^{n}\mu_k <1 \}$で$|I|$は偶数とする。
+        $L_0^{\otimes 2}= \mathscr{O}_C\left(\sum_{i\in I}t_i\right)$を満たす直線束$L_0$をひとつ固定する。
+        すると写像
+        \begin{equation*}
+            \begin{array}{rccc}
+                {\rm elm}_I \colon & {\rm Bun}_{\omega_\infty}^\mu &\longrightarrow& {\rm Bun}_{\omega_\infty}^{\phi_I(\mu)} \\
+                        & (E,\mathbf{p})        & \longmapsto   & (E'\otimes L_0,\mathbf{p}')
+            \end{array}
+        \end{equation*}
+        が定まりこれは同型写像である。
+        ただし
+        $E':= \Ker \left( E\rightarrow \bigoplus_{i \in I}E|_{t_i}/p_i \right)$と定める。
+    \end{prop}
+\end{frame}
+
+
+\begin{frame}
+    \begin{prop}
+        $I\subset \{1,\ldots ,n\}$で$|I|$は偶数、
+        $\mu\in \mathfrak{C}=\{\mu | \sum_{k=1}^{n}\mu_k <1 \}$とする。
+        $$\Gamma_I := \left\{(E_1,\mathbf{p})\in {\rm Bun}^\mu_{\omega_\infty} \simeq (\mathbb{P}^1)^n \middle|
+        \begin{array}{l}
+            (E_1,\mathbf{p})\text{は} 
+            \phi_I(\mu) \text{半安定でない} \\
+            \text{放物ベクトル束}
+        \end{array}
+        \right\}$$
+        と部分多様体を定める。すると
+        $$\Gamma_I \simeq V\times (\mathbb{P}^1)^{n-|I|}$$
+        $$
+        V:=\left\{ \mathbf{p}\in \prod_{i=1}^{|I|}\mathbb{P}(E_1|_{t_i})\middle|
+        \begin{array}{l}
+            {}^\exists L:\text{直線束}{}^\exists \phi \in \Hom (L,E_1)\setminus \{0\} s.t.\\
+            \deg L = 1-\frac{|I|}{2}, {}^\forall i\in I :\phi(L|_{t_i})\subset p_i
+        \end{array}
+        \right\}$$
+        となる。特に$V$は既約な超平面で次数は$(2,\ldots ,2)$となる。
+    \end{prop}
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{定理 [2] Fassarella-Loray-Muniz}
+        $\mathfrak{Con}_{st}^\nu$は有限個の$S^n$に同型なものの貼り合わせで得られる。
+    \end{block}
+    \begin{lem}
+        $|I|$は偶数で$\mu \in \mathfrak{C}=\{\mu | \sum_{k=1}^{n}\mu_k <1 \}$、$\epsilon \in \{+,-\}^n$とする。
+        ${\rm Con}^\nu_{I,\epsilon}$を
+        $${\rm Con}^\nu_{I,\epsilon}:=\left\{(E,\nabla)\in \mathfrak{Con}^\nu
+        \middle| (E,\mathbf{p}^\epsilon(\nabla))\in{\rm Bun}^{\phi_I(\mu)}_{\omega_\infty}\right\}$$
+        と定めると以下の可換図式を得る。
+        \begin{equation*}
+            \xymatrix{
+                {\rm Con}^\nu_{I,\epsilon}\ar[r]^-{\Phi_I^\epsilon}_-{\simeq} \ar@{->>}[d]^-{\pi_\epsilon}
+                & {\rm Con}^{\phi_I^\epsilon(\nu)}\ar@{->>}[d]^-{\pi}\\
+                {\rm Bun}^{\phi_I(\mu)}_{\omega_\infty}\ar[r]^-{\text{elm}^I}_-\simeq & {\rm Bun^\mu_{\omega_\infty}}
+            }
+        \end{equation*}
+    \end{lem}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{定理[2]の証明}
+        \begin{itemize}
+            \item $\mathfrak{Con}^\nu_{st}=\bigcup_{I,\epsilon}{\rm Con}^\nu_{I,\epsilon}$と開被覆をとれる。
+            \item 以下の図式が可換であった。
+            \begin{equation*}
+                \xymatrix{
+                    {\rm Con}^\nu_{I,\epsilon}\ar[r]^-{\Phi_I^\epsilon}_-{\simeq} \ar@{->>}[d]^-{\pi_\epsilon}
+                    & {\rm Con}^{{\phi_I^\epsilon}(\nu)}\ar@{->>}[d]^-{\pi}\\
+                    {\rm Bun}^{\phi_I(\mu)}_{\omega_\infty}\ar[r]^-{\text{elm}^I}_-\simeq & {\rm Bun^\mu_{\omega_\infty}}
+                }
+            \end{equation*}
+            \item 定理[1]より${\rm Con}^{\phi_I^\epsilon (\nu)}\simeq S^n$であった。
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{thm}[再掲:   Fassarella-Loray-Muniz]
+        $n$が偶数のときは$\mathfrak{Con}^\nu = \mathfrak{Con}^\nu_{st}$となる。
+        特に$\mathfrak{Con}^\nu$も有限個の$S^n$に同型なものの貼り合わせで得られる。
+    \end{thm}
+\end{frame}
+
+\end{document}
